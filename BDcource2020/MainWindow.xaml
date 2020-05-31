@@ -1,0 +1,71 @@
+﻿<Window x:Class="BDcource2020.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BDcource2020"
+        xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        mc:Ignorable="d"
+         WindowStyle="None"
+        FontFamily="Century Gothic"
+        ResizeMode="NoResize"
+        FontSize="18"
+        WindowStartupLocation = "CenterScreen"
+        Title="MainWindow" MaxHeight="479"
+        Width="918"
+        Background="#FFCF2222">
+    <DockPanel LastChildFill="True" Background="#FFE8E8E8">
+        <Grid DockPanel.Dock="Top" Height="40" Background="#FF001F89" MouseDown="Move_Window">
+            <Button Name="btn_exit" Margin="0,0,0,0" Width="36" Style="{DynamicResource MyButtonStyle}" Background="#00000000" Click="btn_exit_Click" HorizontalAlignment="Right">
+                <Image Source="exit.png"></Image>
+            </Button>
+            <Button Name="btn_minimize" Margin="0,0,36,0" Width="36" Style="{DynamicResource MyButtonStyle}" Background="#00000000" Click="btn_minimize_Click" HorizontalAlignment="Right">
+                <Image Source="minimize.png"></Image>
+            </Button>
+
+
+
+            <TextBox Text="Search" Name="tb_search" HorizontalAlignment="Left" Margin="35,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="424" Background="#FF001F89" BorderThickness="0" Foreground="#FFAAAAAA" KeyDown="tb_search_KeyDown"/>
+            <Image Name="btn_minimize_Copy" Source="search2.png" Margin="8,7,0,6" Width="23" HorizontalAlignment="Left"/>
+
+            <StackPanel Orientation="Horizontal" Margin="639,0,79,0">
+                <Button Name="btn_left" Width="25" Style="{DynamicResource MyButtonStyle}" Click="btn_left_Click" MouseDoubleClick="btn_left_MouseDoubleClick">
+                    <Button.Background>
+                        <ImageBrush ImageSource="left2.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <TextBlock Name="status_text" FontSize="16" HorizontalAlignment="Left" Text="100/1" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="White"/>
+                <Button Name="btn_right" Width="25" Style="{DynamicResource MyButtonStyle}" Click="btn_right_Click" MouseDoubleClick="btn_right_MouseDoubleClick">
+                    <Button.Background>
+                        <ImageBrush ImageSource="right.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid Width="180" DockPanel.Dock="Right" Background="#FFDE2C2C">
+            <Rectangle Name="rect" Width="4" Height="40" Fill="#FF6181EE" Panel.ZIndex="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Button Name="btn_hospital" Content="  Больницы" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Style="{DynamicResource MyButtonStyle}" VerticalAlignment="Top" Width="180" Height="40" Background="#FF141948" Foreground="White" Click="btn_hospital_Click"/>
+            <Button Name="btn_orders" Content="  Заказы" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Style="{DynamicResource MyButtonStyle}" VerticalAlignment="Top" Width="180" Height="40" Margin="0,40,0,0" Background="#FF141948" Foreground="White" Click="btn_orders_Click"/>
+            <Button Name="btn_firms" Content="  Фирмы" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Style="{DynamicResource MyButtonStyle}" VerticalAlignment="Top" Width="180" Height="40" Margin="0,80,0,0" Background="#FF141948" Foreground="White" Click="btn_firms_Click"/>
+            <Button Name="btn_departs" Content="  Отделения" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Style="{DynamicResource MyButtonStyle}" VerticalAlignment="Top" Width="180" Height="40" Margin="0,120,0,0" Background="#FF141948" Foreground="White" Click="btn_departs_Click"/>
+            <Button Name="btn_jiraf" Content="  Отдел. в больниц." HorizontalContentAlignment="Left" HorizontalAlignment="Center" Style="{DynamicResource MyButtonStyle}" VerticalAlignment="Top" Width="180" Height="40" Margin="0,160,0,0" Background="#FF141948" Foreground="White" Click="btn_jiraf_Click"/>
+            <Button Name="btn_type_hosp" Content="  Типы больниц" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Style="{DynamicResource MyButtonStyle}" VerticalAlignment="Top" Width="180" Height="40" Margin="0,200,0,0" Background="#FF141948" Foreground="White" Click="btn_type_hosp_Click"/>
+            <Button Name="btn_districts" Content="  Районы" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Style="{DynamicResource MyButtonStyle}" VerticalAlignment="Top" Width="180" Height="40" Margin="0,240,0,0" Background="#FF141948" Foreground="White" Click="btn_districts_Click"/>
+            <Button Name="btn_form" Content="  Форма выпуска" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Style="{DynamicResource MyButtonStyle}" VerticalAlignment="Top" Width="180" Height="40" Margin="0,280,0,0" Background="#FF141948" Foreground="White" Click="btn_form_Click"/>
+            <Button Name="btn_type_sobs" Content="  Типы собствен..." HorizontalContentAlignment="Left" HorizontalAlignment="Center" Style="{DynamicResource MyButtonStyle}" VerticalAlignment="Top" Width="180" Height="40" Margin="0,320,0,0" Background="#FF141948" Foreground="White" Click="btn_type_sobs_Click"/>
+            <Button Name="btn_farmo_group" Content="  Фармо группа" HorizontalContentAlignment="Left" HorizontalAlignment="Center" Style="{DynamicResource MyButtonStyle}" VerticalAlignment="Top" Width="180" Height="40" Margin="0,360,0,0" Background="#FF141948" Foreground="White" Click="btn_farmo_group_Click"/>
+            <Button Name="btn_back"  HorizontalContentAlignment="Left" HorizontalAlignment="Center" Style="{DynamicResource MyButtonStyle}" VerticalAlignment="Top" Width="180" Height="40" Margin="0,399,0,0" Background="#FF141948" Foreground="White" Click="btn_back_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Margin="4 0 0 0" Source="query.png" Width="34" Stretch="Uniform"/>
+                    <TextBlock Margin="5 0 0 0" VerticalAlignment="Center">Запросы</TextBlock>
+                </StackPanel>
+            </Button>
+        </Grid>
+        <WindowsFormsHost>
+            <forms:DataGridView x:Name="dataGridView1" CellValueChanged="dataGridView1_CellValueChanged" CellDoubleClick="dataGridView1_CellClick" ColumnWidthChanged="dataGridView1_ColumnWidthChanged" UserDeletingRow="dataGridView1_UserDeletingRow" EditMode="EditOnKeystroke">
+
+            </forms:DataGridView>
+        </WindowsFormsHost>
+    </DockPanel>
+
+</Window>
